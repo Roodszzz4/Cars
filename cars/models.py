@@ -1,6 +1,5 @@
 from django.db import models
-
-
+from django.utils.safestring import mark_safe
 
 
 class Dealer(models.Model):
@@ -23,7 +22,7 @@ class Car(models.Model):
         return self.brand
 
     def dealer_display(self):
-        return ', '.join([dealer.title for dealer in self.dealer.all()])
+        return mark_safe('<br>'.join([dealer.title for dealer in self.dealer.all()]))
 
     dealer_display.short_descriptions = 'Dealer'
 

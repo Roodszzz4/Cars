@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2>
+   <ul class="navbar-brand" href="#">Список машин:</ul>
+</h2>
+
+{% endblock title %}
+
+
+
+{% block content %}
+<ul>
+{% for cars in cars %}
+   <li>{{ cars.brand }}</li>
+{% endfor %}
+</ul>
+{% endblock content %}
+
